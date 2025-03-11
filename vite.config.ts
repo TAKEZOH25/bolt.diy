@@ -152,6 +152,12 @@ export default defineConfig((config) => {
       chrome129IssuePlugin(),
       config.mode === 'production' && optimizeCssModules({ apply: 'build' }),
     ],
+    
+     // AJOUTE ICI la config server pour autoriser tous les hôtes
+    server: {
+      allowedHosts: 'all',
+    },
+    
     envPrefix: [
       'VITE_',
       'OPENAI_LIKE_API_BASE_URL',
