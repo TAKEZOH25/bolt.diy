@@ -1,6 +1,6 @@
 FROM node:20-alpine AS base
 
-RUN apk add --no-cache libc6-compat libcxx git
+RUN apk add --no-cache libc6-compat git gcompat
 
 WORKDIR /app
 
