@@ -1,17 +1,17 @@
-FROM node:20-alpine
+FROM node:20-alpine AS base
+
+RUN apk add --no-cache libc6-compat libc++ libc++abi git
 
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
+
 RUN npm install -g pnpm && pnpm install
 
 COPY . .
 
 RUN pnpm run build
-RUN npm install -g serve
 
 EXPOSE 5173
 
-ENV RUNNING_IN_DOCKER=true
-
-CMD ["serve", "-s", "build/client", "-l", "5173"]
+CMD ["pnpm", "run", "dockerstart"]
