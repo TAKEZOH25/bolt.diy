@@ -15,4 +15,3 @@ EXPOSE 5173
 ENV RUNNING_IN_DOCKER=true
 
 CMD ["serve", "-s", "build/client", "-l", "5173"]
-simplifie Dockerfile pour Coolify
