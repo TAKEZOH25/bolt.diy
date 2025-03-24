@@ -155,7 +155,7 @@ export default defineConfig((config) => {
     
      // AJOUTE ICI la config server pour autoriser tous les hôtes
     server: {
-      allowedHosts: 'ro04kock8o00gkc08wwk48o8.luguss.eu',
+      allowedHosts: 'bolt.luguss.eu',
     },
     
     envPrefix: [
